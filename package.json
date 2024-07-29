@@ -1,0 +1,18 @@
+{
+  "name": "flex-car-rental",
+  "version": "1.0.0",
+  "description": "Flex drive is a car rental web app for easy car renting and making money from car rental services",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app"
+  },
+  "keywords": [
+    "car",
+    "rental"
+  ],
+  "author": "Godwin, RIchard",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
