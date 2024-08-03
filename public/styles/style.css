@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
 *,
 *::before,
 *::after,
@@ -22,7 +25,7 @@ a:is(:link, :hover, :active, :visited) {
 }
 
 @font-face {
-    font-family: 'Google Sans';
+    font-family: 'Google-Sans';
     src: url('ProductSans-Regular.ttf');
 }
 
@@ -35,7 +38,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: Google Sans;
+    font-family: "Open Sans", sans-serif;
     color: var(--text-color-light);
 }
 
@@ -178,7 +181,7 @@ body {
             height: 3rem;
             line-height: 1;
             font-size: 1.125rem;
-            font-family: Google Sans;
+            font-family: "Open Sans", sans-serif;
         }
 
         input[type="Search"]:focus {
@@ -358,7 +361,7 @@ button {
     background-color: var(--color-primary);
     border: none;
     border-radius: .938rem;
-    font-family: Google Sans;
+    font-family: "Open Sans", sans-serif;
 }
 
 .filter-bar {
