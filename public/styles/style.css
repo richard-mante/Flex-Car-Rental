@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after,
+:root {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #F6F6F8;
+    --color-primary: #FF5621;
+    --color-primary-background: rgba(255, 86, 33, .03)
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    overflow: hidden;
+    gap: 2rem;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*------------ Navigation bar styles -------------*/
+.nav-bar {
+    background-color: #fff;
+    border-radius: 1.25rem;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+
+    &.nav-bar--desktop {
+        min-width: 5.625rem;
+        padding: 1rem;
+    }
+
+    .logo {
+        width: 2.5rem;
+
+    }
+}
+
+/* nav tag */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 2rem;
+}
+
+.nav-link {
+    width: 2.625rem;
+    height: 2.625rem;
+    border-radius: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .bar {
+        height: 0;
+        width: 0;
+        position: absolute;
+        background-color: var(--color-primary);
+    }
+
+    &.nav-link--active {
+        background-color: var(--color-primary-background);
+
+        & svg path {
+            stroke: var(--color-primary);
+        }
+
+        & .bar {
+            width: 3px;
+            height: 1.2rem;
+            left: 0;
+            border-radius: 2px;
+        }
+    }
+}
+
+/* --------------- Page body styles ---------------- */
+.body {
+    flex: 1;
+    height: inherit;
+}

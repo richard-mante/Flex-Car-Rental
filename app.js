@@ -2,10 +2,14 @@ const express = require('express');
 
 const app = express();
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }))
-
 app.get('/', (req, res) => {
-    res.send("this is just data");
+    res.render("home",
+        {
+            page: 'home'
+        }
+    );
 })
 
 app.listen(3050, () => {
