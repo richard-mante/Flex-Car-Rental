@@ -8,7 +8,17 @@
 :root {
     --background-color: #F6F6F8;
     --color-primary: #FF5621;
-    --color-primary-background: rgba(255, 86, 33, .03)
+    --color-primary-background: rgba(255, 86, 33, .03);
+    --section-color: #fff;
+    --text-color-light: #5C626B;
+
+    --on-section-color-light: #F5F5F7;
+}
+
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('ProductSans-Regular.ttf');
 }
 
 body {
@@ -20,11 +30,13 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: Google Sans;
+    color: var(--text-color-light);
 }
 
 /*------------ Navigation bar styles -------------*/
 .nav-bar {
-    background-color: #fff;
+    background-color: var(--section-color);
     border-radius: 1.25rem;
     height: inherit;
     display: flex;
@@ -87,4 +99,83 @@ body {
 .body {
     flex: 1;
     height: inherit;
+    padding: 1rem 0;
+}
+
+/* --------------- Top Bar ---------------- */
+.user-profile-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+}
+
+.top-bar {
+    display: flex;
+    background-color: var(--section-color);
+    border-radius: 1.25rem;
+    padding: 1rem;
+    justify-content: space-between;
+
+    .user-details {
+        display: flex;
+        align-items: center;
+        font-size: 1.125rem;
+        font-weight: 500;
+        gap: .625rem;
+        line-height: .5;
+    }
+
+    form {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .search {
+        background-color: var(--on-section-color-light);
+        padding: 0 0.75rem;
+        border-radius: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        height: 3rem;
+
+        input[type="Search"] {
+            height: 100%;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            width: 18.75rem;
+            padding: 0.5rem 0;
+            height: 3rem;
+            line-height: 1;
+            font-size: 1.125rem;
+            font-family: Google Sans;
+        }
+
+        input[type="Search"]:focus {
+            outline: none;
+            border: none;
+        }
+
+        input[type="Search"]::placeholder {
+            color: var(--text-color-light);
+        }
+
+        .search-button {
+            padding: 0;
+            border: none;
+        }
+    }
+
+    .filter {
+        background-color: var(--on-section-color-light);
+        border-radius: 1.25rem;
+        width: 2.82rem;
+        height: 2.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
