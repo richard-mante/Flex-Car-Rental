@@ -360,3 +360,40 @@ button {
     border-radius: .938rem;
     font-family: Google Sans;
 }
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+
+    .filter-container {
+        border-radius: 100px;
+        background-color: var(--section-color);
+        display: flex;
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+
+        .filter-section {
+            display: flex;
+            padding: 0 1rem;
+            gap: .625rem;
+            line-height: 1.5;
+
+            & p {
+                margin: 0;
+            }
+
+            .filter-type {
+                font-size: .9rem;
+            }
+
+            .filter-name {
+                font-size: 1.125rem;
+            }
+        }
+
+        .filter-section+.filter-section {
+            border-left: 2px solid var(--background-color);
+        }
+
+    }
+}
