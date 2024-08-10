@@ -91,8 +91,33 @@ app.get('/', (req, res, next) => {
     authStatusController.checkAuthenticated(req, res, next);
 },
     (req, res) => {
-        res.render('home', { title: 'Flex Drive | settings', page: 'home' });
+        res.render('home', { title: 'Flex Drive', page: 'home' });
     });
+
+//book
+app.get('/book', (req, res, next) => {
+    authStatusController.checkAuthenticated(req, res, next);
+},
+    (req, res) => {
+        res.render('book', { title: 'Flex Drive | book', page: 'home' });
+    });
+
+//book
+app.get('/settings', (req, res, next) => {
+    authStatusController.checkAuthenticated(req, res, next);
+},
+    (req, res) => {
+        res.render('book', { title: 'Flex Drive | settings', page: 'settings' });
+    });
+
+//profile
+app.get('/profile', (req, res, next) => {
+    authStatusController.checkAuthenticated(req, res, next);
+},
+    (req, res) => {
+        res.render('book', { title: 'Flex Drive | profile', page: 'profile' });
+    });
+
 
 //brand
 app.get('/brand', (req, res, next) => {
@@ -116,8 +141,6 @@ app.delete('/logout', (req, res) => {
         res.redirect('/login');
     });
 })
-
-
 
 // Route to handle Paystack callback and verify payment
 
