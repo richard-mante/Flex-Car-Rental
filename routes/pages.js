@@ -123,6 +123,17 @@ app.get('/profile', (req, res, next) => {
         res.render('book', { title: 'Flex Drive | profile', page: 'profile' });
     });
 
+//car details
+    app.get('/car-detials', (req, res, next) => {
+        authStatusController.checkAuthenticated(req, res, next);
+    },
+        async (req, res) => {
+            res.render('carDetails', {
+                title: 'Car Details',
+                page: 'Car Details',
+            });
+        });
+    
 
 //brand
 app.get('/brand', (req, res, next) => {
