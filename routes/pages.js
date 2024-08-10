@@ -90,8 +90,13 @@ app.post('/login', passport.authenticate('local', {
 app.get('/', (req, res, next) => {
     authStatusController.checkAuthenticated(req, res, next);
 },
-    (req, res) => {
-        res.render('home', { title: 'Flex Drive', page: 'home' });
+    async (req, res) => {
+        let cars = await carsController.getAllCars();
+        res.render('home', {
+            title: 'Flex Drive',
+            page: 'home',
+            cars: cars
+        });
     });
 
 //book
@@ -99,7 +104,7 @@ app.get('/book', (req, res, next) => {
     authStatusController.checkAuthenticated(req, res, next);
 },
     (req, res) => {
-        res.render('book', { title: 'Flex Drive | book', page: 'home' });
+        res.render('book', { title: 'Flex Drive | book', page: 'book' });
     });
 
 //book
@@ -124,11 +129,10 @@ app.get('/brand', (req, res, next) => {
     authStatusController.checkAuthenticated(req, res, next);
 },
     async (req, res) => {
-        console.log(req.query.brandName.toLocaleLowerCase());
         let cars = await carsController.getByBrandName(req.query.brandName.toLocaleLowerCase());
 
         res.render('brand', {
-            title: 'Flex Drive | settings',
+            title: `Flex Drive | All ${req.query.brandName} Cars`,
             page: 'home',
             cars: cars
         });

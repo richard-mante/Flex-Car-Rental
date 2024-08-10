@@ -6,3 +6,10 @@ exports.getByBrandName = async (brandName) => {
         return cars;
     }
 }
+
+exports.getAllCars = async () => {
+    const cars = await CarModel.find({});
+    if (cars) {
+        return cars;
+    }
+}
