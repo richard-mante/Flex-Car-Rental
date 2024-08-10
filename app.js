@@ -1,17 +1,45 @@
-const express = require('express');
+const ejs = require('ejs')
+const express = require('express')
+const morgan = require('morgan')
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+const flash = require('express-flash')
+const session = require('express-session')
+const passport = require('passport');
 
-const app = express();
-app.set('view engine', 'ejs');
+
+const authInit = require('./config/auth-config');
+const dbUri = require('./config/dbConfig')
+const routs = require('./routes/pages')
+const UserModel = require('./models/user');
+
+
+const app = express()
+
+
+// register view engine
+app.set('view engine', 'ejs')
+
+
+mongoose.connect(dbUri)
+    .then((res) => {
+        // listen for request
+        app.listen('4500', () => {
+            console.log("listening on http://localhost:4500/");
+        });
+        console.log('connected to db');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+
+
+//logger middle ware
+// app.use(morgan('dev'));
+
+//middle ware for serving static files
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: false }))
-app.get('/', (req, res) => {
-    res.render("home",
-        {
-            page: 'home'
-        }
-    );
-})
 
-app.listen(3050, () => {
-    console.log('Server listening on port http://localhost:3050');
-})
+//use routs
+app.use(routs);
+

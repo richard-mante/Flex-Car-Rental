@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-details">
+      <!-- <a href="/" class="show-on-mobile back-nav">
+        <img src="accets/back.svg" alt=" back">
+      </a> -->
+      <form action="/login" method="post">
+        <h1>Log In to Continue</h1>
+        <% if (messages.error) { %>
+        <span class="error">
+          <%= messages.error %>
+        </span>
+        <% } %>
+        <div class="input-container">
+          <input type="email" name="email" id="email" placeholder="email">
+          <input type="password" name="password" id="password" placeholder="password">
+        </div>
+        <button class="button button-filled">
+          <span class="spin"></span>
+          Sign in
+        </button>
+        <a href="change-password" class="forgot-password">forgot password</a>
+        <div class="or">
+          <li></li>
+          Or
+          <li></li>
+        </div>
+        <div class="auth-options">
+          <a href="" class="option">
+            <img src="assets/apple.svg" alt="">
+          </a>
+          <a href="" class="option">
+            <img src="assets/google.svg" alt="">
+          </a>
+        </div>
+        <a href="signup" class="opposite-auth">Don’t have an account yet? <span>Sign Up</span></a>
+      </form>
+    </div>
+  </div>
+  <script src="scripts/component.js" async></script>
+</body>
+
+</html>

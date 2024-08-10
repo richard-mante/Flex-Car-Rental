@@ -13,8 +13,7 @@
   "author": "Richard AMo Mante, Nhyiraba Godwin",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^3.1.4",
-     "bcrypt": "^5.1.1",
+    "bcrypt": "^5.1.1",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-flash": "^0.0.2",

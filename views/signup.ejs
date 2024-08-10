@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head.ejs') %>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-details">
+      <!-- <a href="/" class="show-on-mobile back-nav">
+        <img src="accets/back.svg" alt="">
+      </a> -->
+      <form action="" method="post" id="signupForm">
+        <h1>Sign Up</h1>
+
+        <div class="input-container" id="form">
+          <input type="text" name="name" id="name" required placeholder="Full Name" />
+          <input type="text" name="phone-number" id="phoneNumber" max="10" min="10" required placeholder="Active Phone Number" />
+          <input type="email" name="email" id="email" required placeholder="Email" />
+          <input type="password" name="password" id="password" placeholder="Password" />
+          <input type="password" name="confirm-password" id="confirmPassword" placeholder="Repeat password" />
+        </div>
+        <button class="button button-filled">
+          <span class="spin"></span>
+          Sign Up</button>
+        <div class="or">
+          <li></li>
+          Or
+          <li></li>
+        </div>
+        <div class="auth-options">
+          <a href="" class="option">
+            <img src="assets/apple.svg" alt="">
+          </a>
+          <a href="" class="option">
+            <img src="assets/google.svg" alt="">
+          </a>
+        </div>
+        <a href="login" class="opposite-auth">Already have an account? <span>Sign In</span></a>
+      </form>
+    </div>
+  </div>
+  <script src="/scripts/script.js"></script>
+</body>
+
+</html>
