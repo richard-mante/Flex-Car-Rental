@@ -6,6 +6,4 @@ COPY . .
 
 RUN npm install
 
-COPY . .
-
-CMD ["node","app"].
+CMD ["node", "app"]

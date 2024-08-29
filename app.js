@@ -24,8 +24,8 @@ app.set('view engine', 'ejs')
 mongoose.connect(dbUri)
     .then((res) => {
         // listen for request
-        app.listen('4500', () => {
-            console.log("listening on http://localhost:4500/");
+        app.listen('3000', () => {
+            console.log("listening on http://localhost:3000/");
         });
         console.log('connected to db');
     })
