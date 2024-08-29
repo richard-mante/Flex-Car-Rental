@@ -4,7 +4,7 @@
   "description": "Flex drive is a car rental web app for easy car renting and making money from car rental services",
   "main": "app.js",
   "scripts": {
-    "app": "npm app"
+    "app": "node app"
   },
   "keywords": [
     "car",
